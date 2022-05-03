@@ -36,6 +36,20 @@ CPMAddPackage(
 )
 ```
 
+### cnjinhao/nana
+
+```cmake
+CPMAddPackage(
+  GITHUB_REPOSITORY cnjinhao/nana
+  GIT_TAG develop-1.8
+  GIT_SHALLOW True
+)
+if (nana_ADDED)
+  find_package(X11 REQUIRED COMPONENTS Xft Xcursor)
+  target_link_libraries(nana PUBLIC ${X11_Xcursor_LIB})
+endif()
+```
+
 ## Serialization
 
 ### fraillt/bitsery
